@@ -28,7 +28,7 @@ Step 2:
 Step 3:
 ${b * h} ÷ 2 = ${area}
 
--------------------
+-----------------------
 
 Perimeter Formula:
 base + side1 + side2
@@ -55,11 +55,13 @@ function calculateCircle() {
 Area Formula:
 π × r²
 
-π × ${r} × ${r}
+π × ${r}²
+
+π × ${r * r}
 
 Area = ${area.toFixed(2)}
 
--------------------
+-----------------------
 
 Circumference Formula:
 2 × π × r
@@ -91,7 +93,7 @@ length × width
 
 ${l} × ${w} = ${area}
 
--------------------
+-----------------------
 
 Perimeter Formula:
 2(length + width)
@@ -130,7 +132,7 @@ Area Formula:
 
 ${(t + b) * h} ÷ 2 = ${area}
 
--------------------
+-----------------------
 
 Perimeter Formula:
 top + bottom + left + right
@@ -146,32 +148,32 @@ function checkQuiz() {
     let q2 = parseFloat(document.getElementById("q2").value);
     let q3 = parseFloat(document.getElementById("q3").value);
 
-    let result = "";
+    let results = "";
 
     if (q1 === 20) {
         score++;
-        result += "Question 1: Correct!\n";
+        results += "Question 1: Correct!\n";
     } else {
-        result += "Question 1: Wrong. 5 × 4 = 20\n";
+        results += "Question 1: Wrong. 5 × 4 = 20\n";
     }
 
     if (q2 === 9) {
         score++;
-        result += "Question 2: Correct!\n";
+        results += "Question 2: Correct!\n";
     } else {
-        result += "Question 2: Wrong. (6 × 3) ÷ 2 = 9\n";
+        results += "Question 2: Wrong. (6 × 3) ÷ 2 = 9\n";
     }
 
     if (q3 === 12) {
         score++;
-        result += "Question 3: Correct!\n";
+        results += "Question 3: Correct!\n";
     } else {
-        result += "Question 3: Wrong. 3 + 4 + 5 = 12\n";
+        results += "Question 3: Wrong. 3 + 4 + 5 = 12\n";
     }
 
-    result += `\nFinal Score: ${score}/3`;
+    results += `\nFinal Score: ${score}/3`;
 
-    document.getElementById("quizOutput").innerText = result;
+    document.getElementById("quizOutput").innerText = results;
 }
 
 </script>
