@@ -1,32 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>K-8 Geometry Tutor</title>
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+max-width:700px;
+margin:30px auto;
+padding:20px;
+background:#fcfcfc;
+line-height:1.6;
+}
+
+.section{
+background:white;
+border:1px solid #ddd;
+border-radius:8px;
+padding:20px;
+margin-bottom:25px;
+box-shadow:0 2px 4px rgba(0,0,0,0.05);
+}
+
+h1,h2{
+color:#222;
+}
+
+.author{
+color:gray;
+font-style:italic;
+}
+
+label{
+display:block;
+margin-top:10px;
+font-weight:bold;
+}
+
+input{
+width:100%;
+padding:8px;
+margin-top:4px;
+box-sizing:border-box;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#007BFF;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0056b3;
+}
+
+.output{
+margin-top:15px;
+padding:12px;
+background:#f4f4f4;
+border-left:4px solid #007BFF;
+white-space:pre-wrap;
+font-family:monospace;
+}
+
+.quiz-q{
+margin-bottom:15px;
+}
+
+.pro{
+border:2px solid #ca28a7;
+}
+
+.badge{
+background:#ca28a7;
+color:white;
+padding:3px 8px;
+border-radius:20px;
+font-size:11px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>K-8 Geometry Tutor & Quizzer</h1>
+
+<p class="author">
+Coded and designed by a 12-year-old developer
+</p>
+
+<div class="section">
+
+<h2>1. Triangle</h2>
+
+<label>Height</label>
+<input type="number" id="triHeight">
+
+<label>Base</label>
+<input type="number" id="triBase">
+
+<label>Side 1</label>
+<input type="number" id="triSide1">
+
+<label>Side 2</label>
+<input type="number" id="triSide2">
+
+<button onclick="calculateTriangle()">
+Calculate
+</button>
+
+<div class="output" id="triOutput">
+Enter numbers above!
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>2. Circle</h2>
+
+<label>Radius</label>
+<input type="number" id="circRadius">
+
+<button onclick="calculateCircle()">
+Calculate
+</button>
+
+<div class="output" id="circOutput">
+Enter numbers above!
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>3. Rectangle</h2>
+
+<label>Length</label>
+<input type="number" id="rectLength">
+
+<label>Width</label>
+<input type="number" id="rectWidth">
+
+<button onclick="calculateRectangle()">
+Calculate
+</button>
+
+<div class="output" id="rectOutput">
+Enter numbers above!
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>4. Trapezoid</h2>
+
+<label>Top Base</label>
+<input type="number" id="trapTop">
+
+<label>Bottom Base</label>
+<input type="number" id="trapBottom">
+
+<label>Height</label>
+<input type="number" id="trapHeight">
+
+<label>Left Side</label>
+<input type="number" id="trapLeft">
+
+<label>Right Side</label>
+<input type="number" id="trapRight">
+
+<button onclick="calculateTrapezoid()">
+Calculate
+</button>
+
+<div class="output" id="trapOutput">
+Enter numbers above!
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>📝 Geometry Quiz</h2>
+
+<div class="quiz-q">
+<p>1. Rectangle 5 × 4 = ?</p>
+<input type="number" id="q1">
+</div>
+
+<div class="quiz-q">
+<p>2. Triangle area with base 6 and height 3?</p>
+<input type="number" id="q2">
+</div>
+
+<div class="quiz-q">
+<p>3. Triangle perimeter with sides 3,4,5?</p>
+<input type="number" id="q3">
+</div>
+
+<button onclick="checkQuiz()">
+Submit Quiz
+</button>
+
+<div class="output" id="quizOutput">
+Submit your answers!
+</div>
+
+</div>
+
+<div class="section pro">
+
+<h2>
+Pro Quiz
+<span class="badge">PRO</span>
+</h2>
+
+<p>
+🔒 Unlock advanced geometry quizzes!
+</p>
+
+<button>
+Subscribe for $4.99/mo
+</button>
+
+</div>
+
 <script>
 
-function calculateTriangle() {
+function calculateTriangle(){
 
-    let h = parseFloat(document.getElementById("triHeight").value);
-    let b = parseFloat(document.getElementById("triBase").value);
-    let s1 = parseFloat(document.getElementById("triSide1").value);
-    let s2 = parseFloat(document.getElementById("triSide2").value);
+let h=parseFloat(document.getElementById("triHeight").value);
+let b=parseFloat(document.getElementById("triBase").value);
+let s1=parseFloat(document.getElementById("triSide1").value);
+let s2=parseFloat(document.getElementById("triSide2").value);
 
-    if (isNaN(h) || isNaN(b) || isNaN(s1) || isNaN(s2)) {
-        document.getElementById("triOutput").innerText =
-        "Please enter valid numbers.";
-        return;
-    }
+if(isNaN(h)||isNaN(b)||isNaN(s1)||isNaN(s2)){
+document.getElementById("triOutput").innerText="Please enter valid numbers.";
+return;
+}
 
-    let area = (b * h) / 2;
-    let perimeter = b + s1 + s2;
+let area=(b*h)/2;
+let perimeter=b+s1+s2;
 
-    document.getElementById("triOutput").innerText =
+document.getElementById("triOutput").innerText=
 `TRIANGLE STEP BY STEP
 
-Step 1:
-Area Formula = (base × height) ÷ 2
+Area Formula:
+(base × height) ÷ 2
 
-Step 2:
 (${b} × ${h}) ÷ 2
 
-Step 3:
-${b * h} ÷ 2 = ${area}
+${b*h} ÷ 2 = ${area}
 
 -------------------
 
@@ -36,20 +269,19 @@ base + side1 + side2
 ${b} + ${s1} + ${s2} = ${perimeter}`;
 }
 
-function calculateCircle() {
+function calculateCircle(){
 
-    let r = parseFloat(document.getElementById("circRadius").value);
+let r=parseFloat(document.getElementById("circRadius").value);
 
-    if (isNaN(r)) {
-        document.getElementById("circOutput").innerText =
-        "Please enter a valid number.";
-        return;
-    }
+if(isNaN(r)){
+document.getElementById("circOutput").innerText="Please enter a valid number.";
+return;
+}
 
-    let area = Math.PI * r * r;
-    let circumference = 2 * Math.PI * r;
+let area=Math.PI*r*r;
+let circumference=2*Math.PI*r;
 
-    document.getElementById("circOutput").innerText =
+document.getElementById("circOutput").innerText=
 `CIRCLE STEP BY STEP
 
 Area Formula:
@@ -69,21 +301,20 @@ Circumference Formula:
 Circumference = ${circumference.toFixed(2)}`;
 }
 
-function calculateRectangle() {
+function calculateRectangle(){
 
-    let l = parseFloat(document.getElementById("rectLength").value);
-    let w = parseFloat(document.getElementById("rectWidth").value);
+let l=parseFloat(document.getElementById("rectLength").value);
+let w=parseFloat(document.getElementById("rectWidth").value);
 
-    if (isNaN(l) || isNaN(w)) {
-        document.getElementById("rectOutput").innerText =
-        "Please enter valid numbers.";
-        return;
-    }
+if(isNaN(l)||isNaN(w)){
+document.getElementById("rectOutput").innerText="Please enter valid numbers.";
+return;
+}
 
-    let area = l * w;
-    let perimeter = 2 * (l + w);
+let area=l*w;
+let perimeter=2*(l+w);
 
-    document.getElementById("rectOutput").innerText =
+document.getElementById("rectOutput").innerText=
 `RECTANGLE STEP BY STEP
 
 Area Formula:
@@ -98,27 +329,26 @@ Perimeter Formula:
 
 2(${l} + ${w})
 
-2(${l + w}) = ${perimeter}`;
+2(${l+w}) = ${perimeter}`;
 }
 
-function calculateTrapezoid() {
+function calculateTrapezoid(){
 
-    let t = parseFloat(document.getElementById("trapTop").value);
-    let b = parseFloat(document.getElementById("trapBottom").value);
-    let h = parseFloat(document.getElementById("trapHeight").value);
-    let l = parseFloat(document.getElementById("trapLeft").value);
-    let r = parseFloat(document.getElementById("trapRight").value);
+let t=parseFloat(document.getElementById("trapTop").value);
+let b=parseFloat(document.getElementById("trapBottom").value);
+let h=parseFloat(document.getElementById("trapHeight").value);
+let l=parseFloat(document.getElementById("trapLeft").value);
+let r=parseFloat(document.getElementById("trapRight").value);
 
-    if (isNaN(t) || isNaN(b) || isNaN(h) || isNaN(l) || isNaN(r)) {
-        document.getElementById("trapOutput").innerText =
-        "Please enter valid numbers.";
-        return;
-    }
+if(isNaN(t)||isNaN(b)||isNaN(h)||isNaN(l)||isNaN(r)){
+document.getElementById("trapOutput").innerText="Please enter valid numbers.";
+return;
+}
 
-    let area = ((t + b) * h) / 2;
-    let perimeter = t + b + l + r;
+let area=((t+b)*h)/2;
+let perimeter=t+b+l+r;
 
-    document.getElementById("trapOutput").innerText =
+document.getElementById("trapOutput").innerText=
 `TRAPEZOID STEP BY STEP
 
 Area Formula:
@@ -126,9 +356,9 @@ Area Formula:
 
 ((${t} + ${b}) × ${h}) ÷ 2
 
-(${t + b} × ${h}) ÷ 2
+(${t+b} × ${h}) ÷ 2
 
-${(t + b) * h} ÷ 2 = ${area}
+${(t+b)*h} ÷ 2 = ${area}
 
 -------------------
 
@@ -138,40 +368,43 @@ top + bottom + left + right
 ${t} + ${b} + ${l} + ${r} = ${perimeter}`;
 }
 
-function checkQuiz() {
+function checkQuiz(){
 
-    let score = 0;
+let score=0;
 
-    let q1 = parseFloat(document.getElementById("q1").value);
-    let q2 = parseFloat(document.getElementById("q2").value);
-    let q3 = parseFloat(document.getElementById("q3").value);
+let q1=parseFloat(document.getElementById("q1").value);
+let q2=parseFloat(document.getElementById("q2").value);
+let q3=parseFloat(document.getElementById("q3").value);
 
-    let result = "";
+let result="";
 
-    if (q1 === 20) {
-        score++;
-        result += "Question 1: Correct!\n";
-    } else {
-        result += "Question 1: Wrong. 5 × 4 = 20\n";
-    }
+if(q1===20){
+score++;
+result+="Question 1: Correct!\n";
+}else{
+result+="Question 1: Wrong. 5 × 4 = 20\n";
+}
 
-    if (q2 === 9) {
-        score++;
-        result += "Question 2: Correct!\n";
-    } else {
-        result += "Question 2: Wrong. (6 × 3) ÷ 2 = 9\n";
-    }
+if(q2===9){
+score++;
+result+="Question 2: Correct!\n";
+}else{
+result+="Question 2: Wrong. (6 × 3) ÷ 2 = 9\n";
+}
 
-    if (q3 === 12) {
-        score++;
-        result += "Question 3: Correct!\n";
-    } else {
-        result += "Question 3: Wrong. 3 + 4 + 5 = 12\n";
-    }
+if(q3===12){
+score++;
+result+="Question 3: Correct!\n";
+}else{
+result+="Question 3: Wrong. 3 + 4 + 5 = 12\n";
+}
 
-    result += `\nFinal Score: ${score}/3`;
+result+=`\nFinal Score: ${score}/3`;
 
-    document.getElementById("quizOutput").innerText = result;
+document.getElementById("quizOutput").innerText=result;
 }
 
 </script>
+
+</body>
+</html>
