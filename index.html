@@ -44,6 +44,8 @@ width:100%;
 padding:8px;
 margin-top:4px;
 box-sizing:border-box;
+border-radius:5px;
+border:1px solid #ccc;
 }
 
 button{
@@ -85,20 +87,55 @@ border-radius:20px;
 font-size:11px;
 }
 
+.ad{
+background:#eee;
+padding:15px;
+text-align:center;
+margin:20px 0;
+border-radius:8px;
+font-weight:bold;
+color:#666;
+}
+
+.coffee{
+display:inline-block;
+background:#FFDD00;
+color:black;
+padding:10px 20px;
+border-radius:5px;
+text-decoration:none;
+font-weight:bold;
+margin-top:10px;
+border:1px solid #E2C200;
+}
+
+.coffee:hover{
+background:#f5d300;
+}
+
+.center{
+text-align:center;
+}
+
 </style>
 </head>
 
 <body>
 
-<h1>K-8 Geometry Tutor & Quizzer</h1>
+<h1>📐 K-8 Geometry Tutor & Quizzer ✏️</h1>
 
 <p class="author">
-Coded and designed by a 12-year-old developer
+👩‍💻 Coded and designed by a 12-year-old developer
 </p>
+
+<!-- ADVERTISEMENT AREA -->
+<div class="ad">
+📢 Advertisement Space
+</div>
 
 <div class="section">
 
-<h2>1. Triangle</h2>
+<h2>🔺 1. Triangle</h2>
 
 <label>Height</label>
 <input type="number" id="triHeight">
@@ -112,8 +149,8 @@ Coded and designed by a 12-year-old developer
 <label>Side 2</label>
 <input type="number" id="triSide2">
 
-<button onclick="calculateTriangle()">
-Calculate
+<button type="button" onclick="calculateTriangle()">
+🧮 Calculate
 </button>
 
 <div class="output" id="triOutput">
@@ -124,13 +161,13 @@ Enter numbers above!
 
 <div class="section">
 
-<h2>2. Circle</h2>
+<h2>⚪ 2. Circle</h2>
 
 <label>Radius</label>
 <input type="number" id="circRadius">
 
-<button onclick="calculateCircle()">
-Calculate
+<button type="button" onclick="calculateCircle()">
+🧮 Calculate
 </button>
 
 <div class="output" id="circOutput">
@@ -141,7 +178,7 @@ Enter numbers above!
 
 <div class="section">
 
-<h2>3. Rectangle</h2>
+<h2>🟦 3. Rectangle</h2>
 
 <label>Length</label>
 <input type="number" id="rectLength">
@@ -149,8 +186,8 @@ Enter numbers above!
 <label>Width</label>
 <input type="number" id="rectWidth">
 
-<button onclick="calculateRectangle()">
-Calculate
+<button type="button" onclick="calculateRectangle()">
+🧮 Calculate
 </button>
 
 <div class="output" id="rectOutput">
@@ -161,7 +198,7 @@ Enter numbers above!
 
 <div class="section">
 
-<h2>4. Trapezoid</h2>
+<h2>📏 4. Trapezoid</h2>
 
 <label>Top Base</label>
 <input type="number" id="trapTop">
@@ -178,8 +215,8 @@ Enter numbers above!
 <label>Right Side</label>
 <input type="number" id="trapRight">
 
-<button onclick="calculateTrapezoid()">
-Calculate
+<button type="button" onclick="calculateTrapezoid()">
+🧮 Calculate
 </button>
 
 <div class="output" id="trapOutput">
@@ -190,7 +227,7 @@ Enter numbers above!
 
 <div class="section">
 
-<h2>📝 Geometry Quiz</h2>
+<h2>📝 Geometry Quiz 🎯</h2>
 
 <div class="quiz-q">
 <p>1. Rectangle 5 × 4 = ?</p>
@@ -207,8 +244,8 @@ Enter numbers above!
 <input type="number" id="q3">
 </div>
 
-<button onclick="checkQuiz()">
-Submit Quiz
+<button type="button" onclick="checkQuiz()">
+✅ Submit Quiz
 </button>
 
 <div class="output" id="quizOutput">
@@ -220,7 +257,7 @@ Submit your answers!
 <div class="section pro">
 
 <h2>
-Pro Quiz
+💎 Pro Quiz
 <span class="badge">PRO</span>
 </h2>
 
@@ -228,9 +265,29 @@ Pro Quiz
 🔒 Unlock advanced geometry quizzes!
 </p>
 
-<button>
-Subscribe for $4.99/mo
+<button type="button">
+💳 Subscribe for $4.99/mo
 </button>
+
+</div>
+
+<!-- SECOND ADVERTISEMENT -->
+<div class="ad">
+📢 Advertisement Space
+</div>
+
+<!-- DONATION SECTION -->
+<div class="section center">
+
+<h2>☕ Support the Developer</h2>
+
+<p>
+If this website helped you, consider supporting it!
+</p>
+
+<a href="#" class="coffee">
+☕ Buy Me a Coffee
+</a>
 
 </div>
 
@@ -244,7 +301,7 @@ let s1=parseFloat(document.getElementById("triSide1").value);
 let s2=parseFloat(document.getElementById("triSide2").value);
 
 if(isNaN(h)||isNaN(b)||isNaN(s1)||isNaN(s2)){
-document.getElementById("triOutput").innerText="Please enter valid numbers.";
+document.getElementById("triOutput").innerText="⚠️ Please enter valid numbers.";
 return;
 }
 
@@ -252,7 +309,7 @@ let area=(b*h)/2;
 let perimeter=b+s1+s2;
 
 document.getElementById("triOutput").innerText=
-`TRIANGLE STEP BY STEP
+`🔺 TRIANGLE STEP BY STEP
 
 Area Formula:
 (base × height) ÷ 2
@@ -274,7 +331,7 @@ function calculateCircle(){
 let r=parseFloat(document.getElementById("circRadius").value);
 
 if(isNaN(r)){
-document.getElementById("circOutput").innerText="Please enter a valid number.";
+document.getElementById("circOutput").innerText="⚠️ Please enter a valid number.";
 return;
 }
 
@@ -282,7 +339,7 @@ let area=Math.PI*r*r;
 let circumference=2*Math.PI*r;
 
 document.getElementById("circOutput").innerText=
-`CIRCLE STEP BY STEP
+`⚪ CIRCLE STEP BY STEP
 
 Area Formula:
 π × r²
@@ -307,7 +364,7 @@ let l=parseFloat(document.getElementById("rectLength").value);
 let w=parseFloat(document.getElementById("rectWidth").value);
 
 if(isNaN(l)||isNaN(w)){
-document.getElementById("rectOutput").innerText="Please enter valid numbers.";
+document.getElementById("rectOutput").innerText="⚠️ Please enter valid numbers.";
 return;
 }
 
@@ -315,7 +372,7 @@ let area=l*w;
 let perimeter=2*(l+w);
 
 document.getElementById("rectOutput").innerText=
-`RECTANGLE STEP BY STEP
+`🟦 RECTANGLE STEP BY STEP
 
 Area Formula:
 length × width
@@ -341,7 +398,7 @@ let l=parseFloat(document.getElementById("trapLeft").value);
 let r=parseFloat(document.getElementById("trapRight").value);
 
 if(isNaN(t)||isNaN(b)||isNaN(h)||isNaN(l)||isNaN(r)){
-document.getElementById("trapOutput").innerText="Please enter valid numbers.";
+document.getElementById("trapOutput").innerText="⚠️ Please enter valid numbers.";
 return;
 }
 
@@ -349,7 +406,7 @@ let area=((t+b)*h)/2;
 let perimeter=t+b+l+r;
 
 document.getElementById("trapOutput").innerText=
-`TRAPEZOID STEP BY STEP
+`📏 TRAPEZOID STEP BY STEP
 
 Area Formula:
 ((top + bottom) × height) ÷ 2
@@ -380,26 +437,26 @@ let result="";
 
 if(q1===20){
 score++;
-result+="Question 1: Correct!\n";
+result+="✅ Question 1: Correct!\n";
 }else{
-result+="Question 1: Wrong. 5 × 4 = 20\n";
+result+="❌ Question 1: Wrong. 5 × 4 = 20\n";
 }
 
 if(q2===9){
 score++;
-result+="Question 2: Correct!\n";
+result+="✅ Question 2: Correct!\n";
 }else{
-result+="Question 2: Wrong. (6 × 3) ÷ 2 = 9\n";
+result+="❌ Question 2: Wrong. (6 × 3) ÷ 2 = 9\n";
 }
 
 if(q3===12){
 score++;
-result+="Question 3: Correct!\n";
+result+="✅ Question 3: Correct!\n";
 }else{
-result+="Question 3: Wrong. 3 + 4 + 5 = 12\n";
+result+="❌ Question 3: Wrong. 3 + 4 + 5 = 12\n";
 }
 
-result+=`\nFinal Score: ${score}/3`;
+result+=`\n🏆 Final Score: ${score}/3`;
 
 document.getElementById("quizOutput").innerText=result;
 }
