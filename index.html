@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>K-8 Geometry Tutor</title>
+
+<style>
+body{
+font-family:Arial;
+max-width:700px;
+margin:30px auto;
+padding:20px;
+background:#fcfcfc;
+line-height:1.6
+}
+.section{
+background:white;
+border:1px solid #ddd;
+border-radius:8px;
+padding:20px;
+margin-bottom:25px;
+box-shadow:0 2px 4px rgba(0,0,0,.05)
+}
+input{
+width:100%;
+padding:8px;
+margin-top:4px;
+box-sizing:border-box
+}
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#007BFF;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer
+}
+button:hover{background:#0056b3}
+.output{
+margin-top:15px;
+padding:12px;
+background:#f4f4f4;
+border-left:4px solid #007BFF;
+white-space:pre-wrap;
+font-family:monospace
+}
+.pro{
+border:2px solid #ca28a7
+}
+.badge{
+background:#ca28a7;
+color:white;
+padding:3px 8px;
+border-radius:20px;
+font-size:11px
+}
+</style>
+</head>
+
+<body>
+
+<h1>K-8 Geometry Tutor & Quizzer</h1>
+<p><i>Coded and designed by a 12-year-old developer</i></p>
+
+<div class="section">
+<h2>1. Triangle</h2>
+
+<label>Height</label>
+<input type="number" id="th">
+
+<label>Base</label>
+<input type="number" id="tb">
+
+<label>Side 1</label>
+<input type="number" id="ts1">
+
+<label>Side 2</label>
+<input type="number" id="ts2">
+
+<button onclick="triangle()">Calculate</button>
+
+<div class="output" id="to">Enter numbers above!</div>
+</div>
+
+<div class="section">
+<h2>2. Circle</h2>
+
+<label>Radius</label>
+<input type="number" id="cr">
+
+<button onclick="circle()">Calculate</button>
+
+<div class="output" id="co">Enter numbers above!</div>
+</div>
+
+<div class="section">
+<h2>3. Rectangle</h2>
+
+<label>Length</label>
+<input type="number" id="rl">
+
+<label>Width</label>
+<input type="number" id="rw">
+
+<button onclick="rectangle()">Calculate</button>
+
+<div class="output" id="ro">Enter numbers above!</div>
+</div>
+
+<div class="section">
+<h2>4. Trapezoid</h2>
+
+<label>Top Base</label>
+<input type="number" id="tt">
+
+<label>Bottom Base</label>
+<input type="number" id="tb2">
+
+<label>Height</label>
+<input type="number" id="th2">
+
+<label>Left Side</label>
+<input type="number" id="tl">
+
+<label>Right Side</label>
+<input type="number" id="tr">
+
+<button onclick="trapezoid()">Calculate</button>
+
+<div class="output" id="tro">Enter numbers above!</div>
+</div>
+
+<div class="section">
+<h2>📝 Geometry Quiz</h2>
+
+<p>1. Rectangle 5 × 4 = ?</p>
+<input type="number" id="q1">
+
+<p>2. Triangle area with base 6 and height 3?</p>
+<input type="number" id="q2">
+
+<p>3. Triangle perimeter with sides 3,4,5?</p>
+<input type="number" id="q3">
+
+<button onclick="quiz()">Submit Quiz</button>
+
+<div class="output" id="qo">Submit your answers!</div>
+</div>
+
+<div class="section pro">
+<h2>Pro Quiz <span class="badge">PRO</span></h2>
+
+<p>🔒 Unlock advanced geometry quizzes!</p>
+
+<button style="background:#ca28a7">
+Subscribe for $4.99/mo
+</button>
+</div>
+
+<script>
+
+function triangle(){
+let h=parseFloat(th.value),
+b=parseFloat(tb.value),
+s1=parseFloat(ts1.value),
+s2=parseFloat(ts2.value);
+
+if(isNaN(h)||isNaN(b)||isNaN(s1)||isNaN(s2)){
+to.innerText="Enter valid numbers";
+return;
+}
+
+let area=(b*h)/2,
+per=b+s1+s2;
+
+to.innerText=
+`Area = ${area}
+Perimeter = ${per}`;
+}
+
+function circle(){
+let r=parseFloat(cr.value);
+
+if(isNaN(r)){
+co.innerText="Enter valid number";
+return;
+}
+
+let area=(Math.PI*r*r).toFixed(2),
+circ=(2*Math.PI*r).toFixed(2);
+
+co.innerText=
+`Area = ${area}
+Circumference = ${circ}`;
+}
+
+function rectangle(){
+let l=parseFloat(rl.value),
+w=parseFloat(rw.value);
+
+if(isNaN(l)||isNaN(w)){
+ro.innerText="Enter valid numbers";
+return;
+}
+
+ro.innerText=
+`Area = ${l*w}
+Perimeter = ${2*(l+w)}`;
+}
+
+function trapezoid(){
+let t=parseFloat(tt.value),
+b=parseFloat(tb2.value),
+h=parseFloat(th2.value),
+l=parseFloat(tl.value),
+r=parseFloat(tr.value);
+
+if(isNaN(t)||isNaN(b)||isNaN(h)||isNaN(l)||isNaN(r)){
+tro.innerText="Enter valid numbers";
+return;
+}
+
+tro.innerText=
+`Area = ${((t+b)*h)/2}
+Perimeter = ${t+b+l+r}`;
+}
+
+function quiz(){
+let score=0;
+
+if(parseFloat(q1.value)==20)score++;
+if(parseFloat(q2.value)==9)score++;
+if(parseFloat(q3.value)==12)score++;
+
+qo.innerText=`You got ${score}/3 correct!`;
+}
+
+</script>
+
+</body>
+</html>
