@@ -2,17 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>K-8 Geometry Tutor</title>
 
 <style>
 body{
-font-family:Arial;
+font-family:Arial,sans-serif;
 max-width:700px;
 margin:30px auto;
 padding:20px;
 background:#fcfcfc;
 line-height:1.6
 }
+
 .section{
 background:white;
 border:1px solid #ddd;
@@ -21,12 +24,14 @@ padding:20px;
 margin-bottom:25px;
 box-shadow:0 2px 4px rgba(0,0,0,.05)
 }
+
 input{
 width:100%;
 padding:8px;
-margin-top:4px;
+margin-top:5px;
 box-sizing:border-box
 }
+
 button{
 margin-top:15px;
 padding:10px 15px;
@@ -36,7 +41,11 @@ border:none;
 border-radius:5px;
 cursor:pointer
 }
-button:hover{background:#0056b3}
+
+button:hover{
+background:#0056b3
+}
+
 .output{
 margin-top:15px;
 padding:12px;
@@ -45,9 +54,11 @@ border-left:4px solid #007BFF;
 white-space:pre-wrap;
 font-family:monospace
 }
+
 .pro{
 border:2px solid #ca28a7
 }
+
 .badge{
 background:#ca28a7;
 color:white;
@@ -55,119 +66,163 @@ padding:3px 8px;
 border-radius:20px;
 font-size:11px
 }
+
+.subtitle{
+color:#555;
+margin-bottom:25px
+}
 </style>
 </head>
 
 <body>
 
-<h1>K-8 Geometry Tutor & Quizzer</h1>
+<h1>📚 K-8 Geometry Tutor & Quizzer</h1>
+
 <p><i>Coded and designed by a 12-year-old developer</i></p>
 
+<p class="subtitle">
+Learn geometry step-by-step and test your math skills!
+</p>
+
+<!-- TRIANGLE -->
 <div class="section">
-<h2>1. Triangle</h2>
+
+<h2>📐 Triangle</h2>
 
 <label>Height</label>
-<input type="number" id="th">
+<input type="number" id="th" placeholder="Enter height">
 
 <label>Base</label>
-<input type="number" id="tb">
+<input type="number" id="tb" placeholder="Enter base">
 
 <label>Side 1</label>
-<input type="number" id="ts1">
+<input type="number" id="ts1" placeholder="Enter side 1">
 
 <label>Side 2</label>
-<input type="number" id="ts2">
+<input type="number" id="ts2" placeholder="Enter side 2">
 
-<button onclick="triangle()">Calculate</button>
+<button onclick="triangle()">Calculate Triangle</button>
 
-<div class="output" id="to">Enter numbers above!</div>
+<div class="output" id="to">
+Enter numbers above!
 </div>
 
+</div>
+
+<!-- CIRCLE -->
 <div class="section">
-<h2>2. Circle</h2>
+
+<h2>⭕ Circle</h2>
 
 <label>Radius</label>
-<input type="number" id="cr">
+<input type="number" id="cr" placeholder="Enter radius">
 
-<button onclick="circle()">Calculate</button>
+<button onclick="circle()">Calculate Circle</button>
 
-<div class="output" id="co">Enter numbers above!</div>
+<div class="output" id="co">
+Enter numbers above!
 </div>
 
+</div>
+
+<!-- RECTANGLE -->
 <div class="section">
-<h2>3. Rectangle</h2>
+
+<h2>▭ Rectangle</h2>
 
 <label>Length</label>
-<input type="number" id="rl">
+<input type="number" id="rl" placeholder="Enter length">
 
 <label>Width</label>
-<input type="number" id="rw">
+<input type="number" id="rw" placeholder="Enter width">
 
-<button onclick="rectangle()">Calculate</button>
+<button onclick="rectangle()">Calculate Rectangle</button>
 
-<div class="output" id="ro">Enter numbers above!</div>
+<div class="output" id="ro">
+Enter numbers above!
 </div>
 
+</div>
+
+<!-- TRAPEZOID -->
 <div class="section">
-<h2>4. Trapezoid</h2>
+
+<h2>🔺 Trapezoid</h2>
 
 <label>Top Base</label>
-<input type="number" id="tt">
+<input type="number" id="tt" placeholder="Enter top base">
 
 <label>Bottom Base</label>
-<input type="number" id="tb2">
+<input type="number" id="tb2" placeholder="Enter bottom base">
 
 <label>Height</label>
-<input type="number" id="th2">
+<input type="number" id="th2" placeholder="Enter height">
 
 <label>Left Side</label>
-<input type="number" id="tl">
+<input type="number" id="tl" placeholder="Enter left side">
 
 <label>Right Side</label>
-<input type="number" id="tr">
+<input type="number" id="tr" placeholder="Enter right side">
 
-<button onclick="trapezoid()">Calculate</button>
+<button onclick="trapezoid()">Calculate Trapezoid</button>
 
-<div class="output" id="tro">Enter numbers above!</div>
+<div class="output" id="tro">
+Enter numbers above!
 </div>
 
+</div>
+
+<!-- QUIZ -->
 <div class="section">
+
 <h2>📝 Geometry Quiz</h2>
 
-<p>1. Rectangle 5 × 4 = ?</p>
-<input type="number" id="q1">
+<p><strong>1.</strong> Rectangle 5 × 4 = ?</p>
+<input type="number" id="q1" placeholder="Your answer">
 
-<p>2. Triangle area with base 6 and height 3?</p>
-<input type="number" id="q2">
+<p><strong>2.</strong> Triangle area with base 6 and height 3?</p>
+<input type="number" id="q2" placeholder="Your answer">
 
-<p>3. Triangle perimeter with sides 3,4,5?</p>
-<input type="number" id="q3">
+<p><strong>3.</strong> Triangle perimeter with sides 3, 4, and 5?</p>
+<input type="number" id="q3" placeholder="Your answer">
 
 <button onclick="quiz()">Submit Quiz</button>
 
-<div class="output" id="qo">Submit your answers!</div>
+<div class="output" id="qo">
+Submit your answers!
 </div>
 
-<div class="section pro">
-<h2>Pro Quiz <span class="badge">PRO</span></h2>
+</div>
 
-<p>🔒 Unlock advanced geometry quizzes!</p>
+<!-- PRO -->
+<div class="section pro">
+
+<h2>
+🔒 Pro Quiz
+<span class="badge">PRO</span>
+</h2>
+
+<p>
+Unlock harder quizzes, challenge mode, and bonus geometry problems!
+</p>
 
 <button style="background:#ca28a7">
 Subscribe for $4.99/mo
 </button>
+
 </div>
 
 <script>
 
 function triangle(){
+
 let h=parseFloat(th.value),
 b=parseFloat(tb.value),
 s1=parseFloat(ts1.value),
 s2=parseFloat(ts2.value);
 
 if(isNaN(h)||isNaN(b)||isNaN(s1)||isNaN(s2)){
-to.innerText="Enter valid numbers";
+to.innerText="Please enter valid numbers";
 return;
 }
 
@@ -176,14 +231,16 @@ per=b+s1+s2;
 
 to.innerText=
 `Area = ${area}
+
 Perimeter = ${per}`;
 }
 
 function circle(){
+
 let r=parseFloat(cr.value);
 
 if(isNaN(r)){
-co.innerText="Enter valid number";
+co.innerText="Please enter a valid number";
 return;
 }
 
@@ -192,24 +249,28 @@ circ=(2*Math.PI*r).toFixed(2);
 
 co.innerText=
 `Area = ${area}
+
 Circumference = ${circ}`;
 }
 
 function rectangle(){
+
 let l=parseFloat(rl.value),
 w=parseFloat(rw.value);
 
 if(isNaN(l)||isNaN(w)){
-ro.innerText="Enter valid numbers";
+ro.innerText="Please enter valid numbers";
 return;
 }
 
 ro.innerText=
 `Area = ${l*w}
+
 Perimeter = ${2*(l+w)}`;
 }
 
 function trapezoid(){
+
 let t=parseFloat(tt.value),
 b=parseFloat(tb2.value),
 h=parseFloat(th2.value),
@@ -217,16 +278,18 @@ l=parseFloat(tl.value),
 r=parseFloat(tr.value);
 
 if(isNaN(t)||isNaN(b)||isNaN(h)||isNaN(l)||isNaN(r)){
-tro.innerText="Enter valid numbers";
+tro.innerText="Please enter valid numbers";
 return;
 }
 
 tro.innerText=
 `Area = ${((t+b)*h)/2}
+
 Perimeter = ${t+b+l+r}`;
 }
 
 function quiz(){
+
 let score=0;
 
 if(parseFloat(q1.value)==20)score++;
